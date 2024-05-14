@@ -107,13 +107,13 @@ spec:
         - --provider=cloudflare
         - --cloudflare-proxied # (optional) enable the proxy feature of Cloudflare (DDOS protection, CDN...)
         - --cloudflare-dns-records-per-page=5000 # (optional) configure how many DNS records to fetch per request
-      env:
-       - name: CF_API_KEY
+        env:
+        - name: CF_API_KEY
           valueFrom:
             secretKeyRef:
               name: cloudflare-api-key
               key: apiKey
-       - name: CF_API_EMAIL
+        - name: CF_API_EMAIL
           valueFrom:
             secretKeyRef:
               name: cloudflare-api-key
@@ -183,16 +183,16 @@ spec:
         - --cloudflare-proxied # (optional) enable the proxy feature of Cloudflare (DDOS protection, CDN...)
         - --cloudflare-dns-records-per-page=5000 # (optional) configure how many DNS records to fetch per request
         env:
-       - name: CF_API_KEY
-        valueFrom:
-          secretKeyRef:
-            name: cloudflare-api-key
-            key: apiKey
-       - name: CF_API_EMAIL
-         valueFrom:
-           secretKeyRef:
-             name: cloudflare-api-key
-             key: email
+        - name: CF_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: cloudflare-api-key
+              key: apiKey
+        - name: CF_API_EMAIL
+          valueFrom:
+            secretKeyRef:
+              name: cloudflare-api-key
+              key: email
 ```
 
 ## Deploying an Nginx Service
